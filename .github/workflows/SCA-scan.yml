@@ -12,10 +12,12 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build the code 
-      run: mvn package
+      run: mvn clean install -DskipTests
     - name: Run Snyk scan 
-      uses: snyk/actions/maven@master
+      uses: snyk/actions/maven@v1
       continue-on-error: true
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        args: test
     
