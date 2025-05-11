@@ -1,7 +1,6 @@
 name: CI Workflow for Docker Build
 
-on:
-  push:
+on: workflow_dispatch
 
 jobs:
   docker:
