@@ -14,7 +14,7 @@ jobs:
     - name: Build the code 
       run: mvn clean install -DskipTests
     - name: Run Snyk scan 
-      uses: snyk/actions/maven@v1
+      uses: snyk/actions/maven@master
       continue-on-error: true
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
