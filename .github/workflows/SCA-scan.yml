@@ -9,10 +9,12 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17'
-        distribution: 'adopt'
-        cache: maven
-    - name: Build the code 
-      run: mvn clean install -DskipTests
+        distribution: 'temurin'
+        cache: 'maven'
+    - name: Build the code
+      run: |
+       echo "JAVA_HOME=$JAVA_HOME"
+       mvn clean install -DskipTests
     - name: Run Snyk scan 
       uses: snyk/actions/maven@master
       continue-on-error: true
