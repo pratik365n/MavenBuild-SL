@@ -18,7 +18,7 @@ jobs:
       run: mvn package
     - name: Connect to Lab machine and trigger a Jenkins job 
       uses: cross-the-world/ssh-scp-ssh-pipelines@latest
-     with:
+      with:
         host: '3.108.6.238’
         user: 'labuser'
         pass: 'Nuvelabs123$'
@@ -26,3 +26,4 @@ jobs:
         connect_timeout: 10s
         first_ssh: |
           curl -l -u admin:Root123$ http://localhost:8080/job/Deployment-pipeline/build?token=token1
+
