@@ -25,4 +25,4 @@ jobs:
         port: 22
         connect_timeout: 10s
         first_ssh: |
-          curl -l -u admin:Root123$ http://localhost:8080/job/Deployment-pipeline/build?token=token1
+          curl -l -u admin:Root123$ http://localhost:8080/job/deployment-pipeline/build?token=token1
